@@ -1,0 +1,10 @@
+---
+# Template configuration files for tomcat
+
+- name: template is copied
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  become: true
+  loop: "{{ tomcat_templates_copy }}"
+  when: tomcat_copy_templates

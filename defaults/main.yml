@@ -1,0 +1,19 @@
+---
+# defaults file for tomcat
+
+tomcat_packages_state: present
+tomcat_remove_packages: true
+tomcat_enable_service: true
+tomcat_enable_selinux: true
+tomcat_copy_templates: true
+tomcat_firewall_configure: true
+tomcat_firewall_rules:
+  - service: ssh
+  - port: 3389
+tomcat_users:
+  - user: devops
+    group: docker
+tomcat_selinux_booleans:
+  - name: ftp_home_dir
+    state: true
+    persistent: true

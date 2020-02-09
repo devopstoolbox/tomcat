@@ -1,0 +1,27 @@
+---
+# Install tomcat packages
+
+- name: unwanted packages are removed
+  package:
+    name: "{{ tomcat_packages_remove }}"
+    state: absent
+  become: true
+  when: tomcat_remove_packages
+
+- name: prereq repositories are installed
+  package:
+    name: "{{ tomcat_packages_repos }}"
+    state: "{{ tomcat_packages_state }}"
+  become: true
+
+- name: prereq packages are installed
+  package:
+    name: "{{ tomcat_packages_prereq }}"
+    state: "{{ tomcat_packages_state }}"
+  become: true
+
+- name: packages are installed
+  package:
+    name: "{{ tomcat_packages_install }}"
+    state: "{{ tomcat_packages_state }}"
+  become: true

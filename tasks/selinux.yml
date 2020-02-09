@@ -1,0 +1,13 @@
+---
+# Template configuration files for tomcat
+
+- name: Set SELinux booleans
+  seboolean:
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+    persistent: "{{ item.persistent | default('false') }}"
+  loop: "{{ tomcat_selinux_booleans }}"
+  when:
+    - ansible_selinux.status == "enabled"
+    - tomcat_enable_selinux
+  become: true
