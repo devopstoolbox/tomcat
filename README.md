@@ -8,10 +8,10 @@ tomcat: Tomcat
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.tomcat](https://galaxy.ansible.com/devops-toolbox.tomcat)
+[https://galaxy.ansible.com/devopstoolbox.tomcat](https://galaxy.ansible.com/devopstoolbox.tomcat)
 
 ```bash
-ansible-galaxy install devops-toolbox.tomcat
+ansible-galaxy install devopstoolbox.tomcat
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: tomcat is configured
       import_role:
-        name: devops-toolbox.tomcat
+        name: devopstoolbox.tomcat
       vars:
         tomcat_packages_state: present
         tomcat_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
